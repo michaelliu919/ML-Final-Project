@@ -10,9 +10,12 @@ with open('National Universities Rankings.csv', newline='', encoding='latin1') a
 print (universityInfo)
 
 usableData = []
-listOfMajors = ["Finance", "Computer", "Med", "Bio", "Chem", "Mechanical", "English", "Philosophy", "Theater", "Architecture",
-                "Nursing", "Management", "Marketing", "History", "Psychology","Criminal", "Business", "Communication", "Education",
-                "Sociology", "Economics", "Politic", "Art", "Math", "Language", "Design", "Music", "Physics", "Pharma"]
+listOfMajors = ["Finance", "Computer Science", "Computer Engineer", "Biomedical", "Bio", "Chem", "Mechanical", "English", "Electrical",
+                "Theater", "Architecture", "Nursing", "Management", "Marketing", "History", "Psychology","Criminal", "Business",
+                "Communication", "Industrial", "Sociology", "Economics", "Politic", "Art", "Math", "Language", "Design", "Music",
+                "Physics", "Pharma", "Health", "Med", "Social", "Government", "Gender", "Law", "Accounting","Philosophy", "Civil",
+                "Aerospace", "Petroleum","Information","Journalism", "Anthropology"]
+
 with open('Most-Recent-Field-Data-Elements.csv', newline='', encoding='latin1') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
@@ -24,7 +27,9 @@ with open('Most-Recent-Field-Data-Elements.csv', newline='', encoding='latin1') 
                     dataR = [maj, int(earning)]
                     dataR = universityInfo[uni]+dataR
                     usableData.append(dataR)
-print(usableData)
+print(usableData[0])
+print("total number of columns: ",len(usableData))
+
 with open('usuable_data_student_success.csv', 'w', newline='') as file:
     file.truncate()
     writer = csv.writer(file)
