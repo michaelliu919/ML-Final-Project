@@ -27,6 +27,7 @@ with open('Most-Recent-Field-Data-Elements.csv', newline='', encoding='latin1') 
                     dataR = [maj, int(earning)]
                     dataR = universityInfo[uni]+dataR
                     usableData.append(dataR)
+
 print(usableData[0])
 print("total number of columns: ",len(usableData))
 
